@@ -275,24 +275,30 @@ body {
 }
 
 /* ==============================
-   RESPONSIVE
+   CAROUSEL RESPONSIVE
 ============================== */
 @media (max-width: 1024px) {
-    .grid-images {
-        grid-template-columns: 1fr;
+    .carousel-btn {
+        font-size: 24px;
+        padding: 8px 10px;
     }
 }
 
 @media (max-width: 600px) {
-    .carousel-track img {
-        width: 200px;
-        height: 130px;
+    .carousel-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carousel-track a {
+        scroll-snap-align: start;
     }
 
     .carousel-btn {
         display: none;
     }
 }
+
 /* ==============================
    CONTACT
 ============================== */
@@ -377,3 +383,4 @@ body {
     .portfolio-grid { grid-template-columns: 1fr; gap: 15px; }
     .contact-form { max-width: 95%; }
 }
+
