@@ -185,78 +185,30 @@ header {
 }
 
 /* ==============================
-   CARROUSEL
+   CAROUSEL RESPONSIVE
 ============================== */
-.carousel {
-    background: #000;
-    padding: 70px 10%;
-    color: #fff;
+@media (max-width: 1024px) {
+    .carousel-btn {
+        font-size: 24px;
+        padding: 8px 10px;
+    }
 }
 
-.carousel h2 {
-    margin-bottom: 30px;
+@media (max-width: 600px) {
+    .carousel-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .carousel-track a {
+        scroll-snap-align: start;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
 }
 
-/* WRAPPER */
-.carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-/* TRACK */
-.carousel-track {
-    display: flex;
-    gap: 20px;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    width: 100%;
-}
-
-/* ITEMS */
-.carousel-track a {
-    flex: 0 0 auto;
-}
-
-.carousel-track img {
-    width: 250px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.carousel-track img:hover {
-    transform: scale(1.05);
-}
-
-/* BOUTONS */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.15);
-    border: none;
-    color: #fff;
-    font-size: 32px;
-    padding: 10px 14px;
-    cursor: pointer;
-    z-index: 5;
-    border-radius: 50%;
-    transition: background 0.3s ease;
-}
-
-.carousel-btn:hover {
-    background: rgba(255,255,255,0.35);
-}
-
-.carousel-btn.prev {
-    left: 0;
-}
-
-.carousel-btn.next {
-    right: 0;
-}
 
 /* ==============================
    CONTACT
@@ -284,9 +236,6 @@ header {
     padding: 20px;
 }
 
-/* ==============================
-   RESPONSIVE
-============================== */
 /* ==============================
    CAROUSEL RESPONSIVE
 ============================== */
@@ -397,3 +346,4 @@ header {
     .contact-form { max-width: 95%; }
 
 }
+
