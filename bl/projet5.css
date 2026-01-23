@@ -387,3 +387,55 @@ header {
     .portfolio-grid { grid-template-columns: 1fr; gap: 15px; }
     .contact-form { max-width: 95%; }
 }
+/* ==============================
+   CARROUSEL RESPONSIVE
+============================== */
+
+/* TABLETTE */
+@media (max-width: 1024px) {
+    .carousel {
+        padding: 50px 5%;
+    }
+
+    .carousel-track img {
+        width: 220px;
+        height: 140px;
+    }
+
+    .carousel-btn {
+        font-size: 28px;
+        padding: 8px 12px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .carousel {
+        padding: 40px 15px;
+    }
+
+    .carousel-wrapper {
+        overflow-x: auto;
+    }
+
+    .carousel-track {
+        gap: 15px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel-track a {
+        scroll-snap-align: start;
+    }
+
+    .carousel-track img {
+        width: 180px;
+        height: 120px;
+    }
+
+    /* On cache les boutons sur mobile */
+    .carousel-btn {
+        display: none;
+    }
+}
