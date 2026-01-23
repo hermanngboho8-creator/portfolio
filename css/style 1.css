@@ -7,6 +7,26 @@
     box-sizing: border-box;
 }
 
+/* ================= SCROLL FAKE TRANSITION ================= */
+body {
+    overflow-x: hidden;
+}
+
+.page-scroll {
+    animation: scrollIn 1.4s ease-out forwards;
+    transform: translateY(100vh);
+}
+
+@keyframes scrollIn {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
@@ -152,6 +172,23 @@ header {
 }
 
 /* Carte projet */
+
+/* IMAGE HOVER CACHÉE */
+.portfolio-grid .img-hover {
+    opacity: 0;
+}
+
+/* AU SURVOL */
+.portfolio-grid .card:hover .img-default {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+.portfolio-grid .card:hover .img-hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
 .project-card {
     position: relative;
     overflow: hidden;
