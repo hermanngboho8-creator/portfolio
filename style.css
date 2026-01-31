@@ -235,6 +235,130 @@ header {
     object-fit: contain;
 }
 
+
+/* ===== Section ===== */
+.experience-section {
+    background-color: #faf7f5;
+    padding: 80px 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #111;
+}
+
+/* ===== Timeline ===== */
+.timeline {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+/* Vertical line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 180px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #111;
+}
+
+/* Item */
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+/* Date box */
+.timeline-date {
+    width: 150px;
+    text-align: center;
+}
+
+.timeline-date span {
+    display: inline-block;
+    border: 2px solid #111;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Dot */
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background-color: #111;
+    border-radius: 50%;
+    margin: 12px 30px 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Card */
+.timeline-content {
+    background-color: #fff;
+    border-radius: 18px;
+    padding: 24px 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    max-width: 480px;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+.timeline-content .period {
+    display: block;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        padding-left: 40px;
+    }
+
+    .timeline-date {
+        width: auto;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: 14px;
+        margin: 0;
+    }
+}
+
+
+
 /* ==============================
    PORTFOLIO
 
@@ -253,7 +377,7 @@ header {
     opacity: 1;
     transform: scale(1.05);
 }
-============================== */
+
 .portfolio {
     padding: 60px 20px;
     background: #f5f5f5;
@@ -330,7 +454,6 @@ header {
     transform: scale(1.1);
     box-shadow: 0 10px 25px rgba(255, 153, 0, 0.4);
 }
-
 
 /* ===============================
    SECTION SERVICES – FLEX
@@ -569,4 +692,3 @@ header {
         grid-template-columns: 1fr;
     }
 }
-
