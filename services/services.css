@@ -1,175 +1,537 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
-    <link rel="icon" type="" sizes="32x32" href="image/favicon.png">
-    <link rel="stylesheet" href="services/services.css">
-</head>
-<body>
-   <!-- ================= HEADER ================= -->
-<header class="header">
-    <div class="container nav">
-        <img src="image/image.png" alt="Logo" class="logo">
+/* ==============================
+   RESET
+============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <nav>
-            <ul class="menu" id="menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="sercices.html"class="active">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<!-- SERVIVES -->
-<div class="flexbox">
-    <h2>Mes Services</h2>
-    <div class="image-container">
-        <a href="brand.html">
-            <img src="image/services/branding.png" alt="">
-            <div class="title">Branding Design</div>
-        </a>
-    </div>
-    <div class="image-container">
-        <a href="web.html">
-            <img src="image/services/file_0000000014c4722f97000679e7ff4a39.png" alt="">
-            <div class="title">Wbeb Design</div>
-        </a>
-    </div>
-    <div class="image-container">
-        <a href="cm.html">
-            <img src="image/services/cm.png" alt="">
-            <div class="title">Community Management</div>
-        </a>
-    </div>
-    <div class="image-container">
-        <a href="sytategie.html">
-            <img src="image/services/strategie.png" alt="">
-            <div class="title">Stratégie Marketing</div>
-        </a>
-    </div>
-    <div class="image-container">
-        <a href="tmontage.html">
-            <img src="image/services/montage.png" alt="">
-            <div class="title">Montage Video</div>
-        </a>
-    </div>
-     <div class="image-container">
-        <a href="formation.html">
-            <img src="image/services/file_0000000014c4722f97000679e7ff4a39.png" alt="">
-            <div class="title">Formation</div>
-        </a>
-    </div>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
 
 
 
-</div>
+/* État initial */
+.page-scroll {
+    transform: scale(0.95);
+    opacity: 0;
+    animation: zoomIn 0.6s ease forwards;
+}
 
-<!-- EXPERIENCE / OUTILS -->
-<section class="experience">
-    <h2>Mes outils</h2>
-
-    <div class="tools">
-        <div class="tool">
-            <img src="image/outil/AI.jfif" alt="Adobe Illustrator">
-        </div>
-        <div class="tool">
-            <img src="image/outil/PS.jfif" alt="Adobe Photoshop">
-        </div>
-        <div class="tool">
-            <img src="image/outil/ID.jfif" alt="Adobe InDesign">
-        </div>
-        <div class="tool">
-            <img src="image/outil/PR.jfif" alt="Adobe Premiere Pro">
-        </div>
-        <div class="tool">
-            <img src="image/outil/XD.jfif" alt="Adobe XD">
-        </div>
-    </div>
-</section>
-<<!-- ================= CONTACT ================= -->
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <h2>Contact</h2>
-
-    <form class="contact-form" id="contactForm">
-    <input type="text" id="nom" placeholder="Nom" required>
-    <input type="text" id="prenom" placeholder="Prénom" required>
-    <input type="tel" id="telephone" placeholder="Numéro de téléphone" required>
-    <textarea id="message" placeholder="Votre message" required></textarea>
-
-    <button type="submit">Envoyer</button>
-    <small class="info-whatsapp">Vous serez redirigé vers WhatsApp</small>
-
-    <p id="error" style="color:red; display:none;"></p>
-</form>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-    <p>© 2026 — Créé par Design and Co</p>
-</footer>
+/* Animation */
+@keyframes zoomIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 
+/* ==============================
+   GLOBAL
+============================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
 
-<!-- ================= JS MENU ================= -->
-<script>
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
+/*=============================
+   HEADER / MENU
+============================== */
+.header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
 
-    hamburger.addEventListener('click', () => {
-        menu.classList.toggle('active');
-        hamburger.classList.toggle('open');
-    });
-</script>
+.nav {
+    display: flex;
+    justify-content: space-between; /* logo à gauche, hamburger/menu à droite */
+    align-items: center;
+    padding: 15px 0;
+    position: relative;
+}
 
-<!-- JAVASCRIPT FORMULAIRE -->
+.logo {
+    width: 120px;
+}
 
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+/* MENU NORMAL */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
 
-    let nom = document.getElementById("nom").value.trim();
-    let prenom = document.getElementById("prenom").value.trim();
-    let telephone = document.getElementById("telephone").value.trim();
-    let message = document.getElementById("message").value.trim();
-    let error = document.getElementById("error");
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 40px; /* ⬅️ diminue ici (avant c’était sûrement 20–30px) */
 
-    // Validation du numéro (Côte d'Ivoire : 10 chiffres)
-    let regexTelephone = /^[0-9]{10}$/;
+    
+}
 
-    if (!regexTelephone.test(telephone)) {
-        error.style.display = "block";
-        error.textContent = "Veuillez entrer un numéro de téléphone valide (10 chiffres).";
-        return;
-    } else {
-        error.style.display = "none";
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #ff9900;
+    transform: scale(1.1);
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none; /* caché sur desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    order: 2; /* reste à l’extrême droite */
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animation hamburger ouvert */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MENU RESPONSIVE TABLETTE ET SMARTPHONE */
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
     }
 
-    let texte =
-`Bonjour, je vous contacte depuis votre site web.
-Nom : ${nom}
-Prénom : ${prenom}
-Téléphone : ${telephone}
-Message : ${message}`;
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 0; /* menu aligné à droite */
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        z-index: 10;
+    }
 
-    let numeroWhatsApp = "2250758774741"; // Ton numéro WhatsApp avec indicatif
-    let url = "https://wa.me/" + numeroWhatsApp + "?text=" + encodeURIComponent(texte);
+    .menu.active {
+        display: flex;
+    }
 
-    window.open(url, "_blank");
-});
-</script>
+}
 
-</div>
-</body>
-</html>
+/* ===============================
+   SECTION SERVICES – FLEX
+================================ */
 
+.flexbox {
+    width: 100%;
+    background: #000;
+    padding: 60px 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Titre */
+.flexbox h2 {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #fff;
+}
+
+/* ===============================
+   CARTES
+================================ */
+
+.image-container {
+    border-radius: 18px;
+    overflow: hidden;
+    min-height: 180px;
+
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Largeurs différentes */
+
+/* Ligne 1 */
+.image-container:nth-child(2),
+.image-container:nth-child(3) {
+    flex: 0 0 48%;
+}
+
+.image-container:nth-child(4) {
+    flex: 0 0 24%;
+}
+
+/* Ligne 2 */
+.image-container:nth-child(5) {
+    flex: 0 0 48%;
+}
+
+.image-container:nth-child(6),
+.image-container:nth-child(7) {
+    flex: 0 0 24%;
+}
+
+/* ===============================
+   COULEURS
+================================ */
+
+.image-container:nth-child(2) { background: #111; }
+.image-container:nth-child(3) { background: #f7b500; }
+.image-container:nth-child(4) { background: #ff3b3b; }
+.image-container:nth-child(5) { background: #f5f5f5; }
+.image-container:nth-child(6) { background: #19c37d; }
+.image-container:nth-child(7) { background: #2979ff; }
+
+.image-container a {
+    width: 100%;
+    padding: 24px; /* ⬅️ un peu plus d’espace */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    text-decoration: none;
+}
+
+.image-container:nth-child(5) a {
+    color: #000;
+}
+
+/* ===============================
+   CONTENU (MODIFIÉ ICI)
+================================ */
+
+.image-container img {
+    max-width: 120px;   /* ⬅️ image plus grande */
+    height: auto;
+    align-self: flex-end;
+}
+
+.image-container .title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* ===============================
+   HOVER
+================================ */
+
+.image-container:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.6);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Tablette */
+@media (max-width: 992px) {
+    .image-container {
+        flex: 0 0 48% !important;
+    }
+
+    .image-container img {
+        max-width: 100px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .flexbox {
+        flex-direction: column;
+    }
+
+    .image-container {
+        flex: 0 0 100% !important;
+        min-height: 140px;
+    }
+
+    .image-container img {
+        max-width: 90px;
+    }
+
+    .flexbox h2 {
+        text-align: center;
+        font-size: 22px;
+    }
+}
+
+
+
+/* ==============================
+   EXPERIENCE / OUTILS
+============================== */
+.experience {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.experience h2 {
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+.tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.tool {
+    width: 90px;
+    height: 90px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tool img {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ==============================
+   CONTACT
+============================== */
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 40px;
+    font-size: 28px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #ffc400;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+.footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 1024px) {
+    .hero-content { max-width: 90%; margin: 0 auto; padding: 30px; }
+    .tools { gap: 15px; }
+    .pricing-grid { gap: 20px; }
+    .card { width: 220px; padding: 25px 20px; }
+    .contact-form { max-width: 90%; }
+}
+
+@media (max-width: 767px) {
+    .nav { flex-direction: row; justify-content: space-between; align-items: center; }
+    .hero { height: 70vh; background-position: center top; }
+    .hero-content { padding: 20px; max-width: 95%; margin: 0 auto; }
+    .tools { gap: 10px; justify-content: center; }
+    .tool { width: 70px; height: 70px; }
+    .pricing-grid { flex-direction: column; gap: 15px; align-items: center; }
+    .card { width: 90%; padding: 20px; }
+    .portfolio-grid { grid-template-columns: 1fr; gap: 15px; }
+    .contact-form { max-width: 95%; }
+}
+
+@media (max-width: 1024px) {
+
+  /* HEADER */
+  header {
+    padding: 10px 20px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  /* PRICING */
+  .pricing {
+    padding: 60px 20px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* TOOLS */
+  .tool {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* CONTACT */
+  .contact-form {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  /* MENU MOBILE */
+  .menu {
+    width: 100%;
+    right: 0;
+    left: 0;
+    border-radius: 0 0 15px 15px;
+  }
+
+  /* PRICING */
+  .pricing h2 {
+    font-size: 24px;
+  }
+
+  .pricing .subtitle {
+    font-size: 14px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  /* TOOLS */
+  .tools {
+    gap: 12px;
+  }
+
+  .tool {
+    width: 65px;
+    height: 65px;
+  }
+
+  /* CONTACT */
+  .contact h2 {
+    font-size: 24px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* PRICING */
+  .pricing {
+    padding: 50px 12px;
+  }
+
+  .card-head h3 {
+    font-size: 20px;
+  }
+
+  .forwho,
+  .card ul li {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  /* FOOTER */
+  .footer {
+    font-size: 14px;
+  }
+}
