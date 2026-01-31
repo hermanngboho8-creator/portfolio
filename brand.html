@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="service web/web.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="container nav">
+        <img src="image/image.png" alt="Logo" class="logo">
+
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul class="menu" id="menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="page-scroll">
+
+  <!-- SERVICES BRANDING DESIGN -->
+  <section class="pricing" id="branding-design">
+
+    <h2>Branding Design</h2>
+    <p class="subtitle">
+      Des solutions de branding pensées pour construire une image forte,
+      cohérente et professionnelle
+    </p>
+
+    <div class="pricing-grid">
+
+      <!-- Démarrage -->
+      <div class="card">
+        <div class="card-head head-start">
+          <h3>Démarrage</h3>
+        </div>
+
+        <p class="forwho">
+          Pour les entrepreneurs qui lancent leur activité
+        </p>
+
+        <ul>
+          <li>Création de logo (2 propositions)</li>
+          <li>Carte de visite recto verso</li>
+          <li>Papier en-tête professionnel</li>
+          <li>3 visuels pour réseaux sociaux</li>
+          <li>Délai de livraison : 3 à 5 jours</li>
+        </ul>
+      </div>
+
+      <!-- Image Pro -->
+      <div class="card popular">
+        <div class="badge">⭐ Recommandé</div>
+
+        <div class="card-head head-pro">
+          <h3>Image Pro</h3>
+        </div>
+
+        <p class="forwho">
+          Pour les entreprises qui veulent une image crédible et cohérente
+        </p>
+
+        <ul>
+          <li>Création de logo (3 propositions)</li>
+          <li>Mini charte graphique (couleurs + typographies)</li>
+          <li>Carte de visite + papier en-tête</li>
+          <li>4 visuels pour réseaux sociaux</li>
+          <li>1 affiche ou flyer</li>
+          <li>Délai de livraison : 5 à 10 jours</li>
+        </ul>
+      </div>
+
+      <!-- Marque Complète -->
+      <div class="card">
+        <div class="card-head head-brand">
+          <h3>Marque Complète</h3>
+        </div>
+
+        <p class="forwho">
+          Pour les marques qui veulent une identité forte et durable
+        </p>
+
+        <ul>
+          <li>Création de logo (4 propositions)</li>
+          <li>Charte graphique complète</li>
+          <li>Supports de communication personnalisés</li>
+          <li>6 visuels pour réseaux sociaux</li>
+          <li>2 affiches + 1 flyer</li>
+          <li>Délai de livraison : 2 à 3 semaines</li>
+        </ul>
+      </div>
+
+      <!-- Sur mesure -->
+      <div class="card custom">
+        <div class="card-head head-custom">
+          <h3>Sur mesure</h3>
+        </div>
+
+        <p class="forwho">
+          Une offre personnalisée selon vos besoins spécifiques
+        </p>
+
+        <ul>
+          <li>Choix libre des livrables</li>
+          <li>Nombre de révisions flexible</li>
+          <li>Accompagnement stratégique</li>
+          <li>Délais adaptés à votre projet</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>© 2026 — Créé par Design and Co</p>
+</footer>
+
+<!-- ================= JS MENU ================= -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>
