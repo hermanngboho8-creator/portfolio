@@ -168,6 +168,7 @@ header {
 .hero {
     min-height: 100vh;
     background: url("image/hero.jpg") center/cover no-repeat;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
 }
@@ -692,3 +693,4 @@ header {
         grid-template-columns: 1fr;
     }
 }
+
