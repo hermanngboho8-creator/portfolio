@@ -1,4 +1,15 @@
 /* ==============================
+  FONTS
+============================== */
+@font-face{
+    font-family: 'Think loved';
+    src: url(fonts/Think\ Loved.ttf);
+}
+
+
+
+
+/* ==============================
    RESET
 ============================== */
 * {
@@ -165,33 +176,53 @@ header {
 /* ==============================
    HERO
 ============================== */
+
 .hero {
-    min-height: 100vh;
-    background: url("image/hero.jpg") center/cover no-repeat;
-    background-attachment: fixed;
+    position: relative;
     display: flex;
     align-items: center;
+    justify-content: flex-end; /* aligne le contenu à droite */
+    height: 100vh;
+    background: url('image/hero2.jpg') no-repeat center center/cover;
 }
 
 .hero-content {
     background: rgba(228, 216, 216, 0.95);
     padding: 40px;
     max-width: 600px;
-    margin-left: 5%;
+    margin-right: 5%; /* espace du bord droit */
+    text-align: left;
+    border-radius: 12px ;
 }
 
-.hero h1 {
+.hero-content h1 {
     margin-bottom: 15px;
+    font-size: 2.5rem;
 }
 
-.btn {
+.hero-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.hero-content .btn {
     display: inline-block;
-    margin-top: 15px;
     padding: 12px 25px;
     background: #000;
     color: #fff;
     text-decoration: none;
     border-radius: 20px;
+}
+
+/* Si tu veux que le bouton soit absolument positionné par rapport au bloc */
+.hero-content {
+    position: relative;
+}
+
+.hero-content .btn {
+    position: absolute;
+    bottom: 20px; /* distance du bas du bloc */
+    right: 20px;  /* distance du bord droit du bloc */
 }
 
 /* ==============================
@@ -359,7 +390,53 @@ header {
 }
 
 
+/* Tablettes et petits écrans */
+@media (max-width: 1024px) {
+    .hero {
+        justify-content: center; /* centre le bloc texte */
+        padding: 10px;
+    }
+    .hero-content {
+        max-width: 80%;
+        margin: 0;
+        padding: 30px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .hero-content .btn {
+        position: static;
+        margin-top: 15px;
+        display: block;
+    }
+}
 
+/* Mobile */
+@media (max-width: 600px) {
+    .hero {
+        background-image: url(image/hero\ mobile.jpg);
+        flex-direction: column; /* empile verticalement si besoin */
+        justify-content: center;
+    }
+    .hero-content {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+    .hero-content .btn {
+        margin: 15px auto 0 auto;
+        position: static;
+    }
+}
 /* ==============================
    PORTFOLIO
 
@@ -693,4 +770,3 @@ header {
         grid-template-columns: 1fr;
     }
 }
-
