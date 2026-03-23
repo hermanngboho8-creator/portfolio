@@ -417,7 +417,7 @@ header {
 /* Mobile */
 @media (max-width: 600px) {
     .hero {
-        background-image: url(image/hero/mobile.jpg);
+    background-image: url(image/hero_phone.jpg);
         flex-direction: column; /* empile verticalement si besoin */
         justify-content: center;
     }
