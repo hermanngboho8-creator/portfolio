@@ -274,6 +274,20 @@
 <!-- JAVASCRIPT FORMULAIRE -->
 
 <script>
+
+     const hero = document.querySelector('.hero-content');
+
+window.addEventListener('scroll', () => {
+    let scrollY = window.scrollY;
+
+    let opacity = 1 - scrollY / 300;
+    let translateY = scrollY * 0.3;
+
+    if (opacity < 0) opacity = 0;
+
+    hero.style.opacity = opacity;
+    hero.style.transform = `translateY(${translateY}px)`;
+});
 document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
